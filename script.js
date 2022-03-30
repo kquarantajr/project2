@@ -15,7 +15,7 @@ length.addEventListener('blur', () => {
   length.placeholder = '5';
 })
 
-resetButton.addEventListener('click', () => {
+let reset = () => {
   numbersRadios.forEach(radio => {
     radio.checked = false;
   })
@@ -26,8 +26,11 @@ resetButton.addEventListener('click', () => {
     radio.checked = false;
   })
   length.value = '';
+  
   pwDisplay.innerText = '';
-});
+}
+
+resetButton.addEventListener('click', reset);
 
 generateButton.addEventListener('click', async() => {
   let numbersValue = false;
@@ -58,11 +61,11 @@ generateButton.addEventListener('click', async() => {
   let pw = response.data.data;
   pwDisplay.innerText = pw;
 
-  let copyButton = document.createElement('button');
-  copyButton.setAttribute('id', 'copyButton');
-  copyButton.innerText = 'Copy';
-  pwDisplay.appendChild(copyButton);
-  copyButton.addEventListener('click', () => {
-    navigator.clipboard.write(pw);
-  })
+  // let copyButton = document.createElement('button');
+  // copyButton.setAttribute('id', 'copyButton');
+  // copyButton.innerText = 'Copy';
+  // pwDisplay.appendChild(copyButton);
+  // copyButton.addEventListener('click', () => {
+  //   navigator.clipboard.write(pw);
+  // })
 });

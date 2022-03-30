@@ -7,7 +7,22 @@ body{
     position: relative;
     background-color: rgba(247, 115, 53, 0.8);
 }
-h1 {
+h1{
+    text-align: center;
+    width: 60%;
+    margin: 2em auto 0.5em auto;
+    font-size: 5rem;
+}
+#courtesy{
+    text-align: center;
+    font-style: italic;
+}
+#enterButton{
+    display: block;
+    width: 20%;
+    margin: 6em auto;
+}
+h2 {
     /* position: relative;
     top: 40%; */
     text-align: center;
@@ -38,7 +53,7 @@ button{
     margin: 1em 0;
     font-size: 1em;
 }
-a{
+button a{
     text-decoration: none;
     color: black;
 }

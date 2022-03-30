@@ -1,19 +1,6 @@
-// const button = document.querySelector('button')
-// const breedInput = document.querySelector('input')
-// const imageDiv = document.querySelector('div')
-
-// button.addEventListener('click', async () => {
-//     let breed = breedInput.value
-//     let response = await axios.get(
-//         `https://dog.ceo/api/breed/${breed}/images/random`
-//       )
-//     let dogPic = response.data.message
-//     imageDiv.innerHTML = `<img src="${dogPic}">`
-// })
-
-const button = document.querySelector('button');
-
+const generateButton = document.querySelector('#generateButton');
 const pwDisplay = document.querySelector('#pwDisplay');
+const resetButton = document.querySelector('#resetButton');
 
 //Input Fields
 let numbersRadios = document.body.querySelectorAll('input[name="numbers"]');
@@ -21,9 +8,27 @@ let specialRadios = document.body.querySelectorAll('input[name="special"]');
 let uppercaseRadios = document.body.querySelectorAll('input[name="uppercase"]');
 let length = document.querySelector('#length');
 
-// console.log(numbersRadios);
+length.addEventListener('focus', () => {
+  length.placeholder = '';
+})
+length.addEventListener('blur', () => {
+  length.placeholder = '5';
+})
 
-button.addEventListener('click', async () => {
+resetButton.addEventListener('click', () => {
+  numbersRadios.forEach(radio => {
+    radio.checked = false;
+  })
+  specialRadios.forEach(radio => {
+    radio.checked = false;
+  })
+  uppercaseRadios.forEach(radio => {
+    radio.checked = false;
+  })
+  length.value = '';
+});
+
+generateButton.addEventListener('click', async () => {
     let numbersValue = false;
     let specialValue = false;
     let uppercaseValue = false;
@@ -52,4 +57,5 @@ button.addEventListener('click', async () => {
     console.log(response);
     let pw = response.data.data;
     pwDisplay.innerText = pw;
-})
+  }
+)

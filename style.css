@@ -40,3 +40,7 @@ button{
     padding: 0 1em;
     margin: 1em auto;
 }
+#resetButton{
+    background-color: red;
+    color: white;
+}

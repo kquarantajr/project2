@@ -63,6 +63,12 @@ button a{
     padding: 0 1em;
     margin: 1em auto;
 }
+#copyButton{
+    font-size: 0.6rem;
+    vertical-align: super;
+    right: 0;
+    top: 0;
+}
 #resetButton{
     background-color: red;
     color: white;

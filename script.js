@@ -57,4 +57,12 @@ generateButton.addEventListener('click', async() => {
 
   let pw = response.data.data;
   pwDisplay.innerText = pw;
+
+  let copyButton = document.createElement('button');
+  copyButton.setAttribute('id', 'copyButton');
+  copyButton.innerText = 'Copy';
+  pwDisplay.appendChild(copyButton);
+  copyButton.addEventListener('click', () => {
+    navigator.clipboard.write(pw);
+  })
 });

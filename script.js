@@ -26,6 +26,7 @@ resetButton.addEventListener('click', () => {
     radio.checked = false;
   })
   length.value = '';
+  pwDisplay.innerText = '';
 });
 
 generateButton.addEventListener('click', async () => {
@@ -48,6 +49,7 @@ generateButton.addEventListener('click', async () => {
     } else{
       uppercaseValue = '';
     }
+
 
     //GET Request
     let response = await axios.get(
